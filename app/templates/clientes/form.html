@@ -12,26 +12,61 @@
         <div class="form-group">
             <label>Nome</label>
             {{ form.nome(class="form-control") }}
+
+            {% if form.errors.nome %}
+            <div class="alert alert-danger">
+                {{ form.errors.nome }}
+            </div>
+            {% endif %}
+
         </div>
 
         <div class="form-group">
             <label>Email</label>
             {{ form.email(class="form-control") }}
+
+            {% if form.errors.email %}
+            <div class="alert alert-danger">
+                {{ form.errors.email }}
+            </div>
+            {% endif %}
+
         </div>
 
         <div class="form-group">
             <label>Data de Nascimento</label>
             {{ form.data_nascimento(class="form-control") }}
+
+            {% if form.errors.data_nascimento %}
+            <div class="alert alert-danger">
+                {{ form.errors.data_nascimento }}
+            </div>
+            {% endif %}
+
         </div>
 
         <div class="form-group">
             <label>Profissao</label>
             {{ form.profissao(class="form-control") }}
+
+            {% if form.errors.profissao %}
+            <div class="alert alert-danger">
+                {{ form.errors.profissao }}
+            </div>
+            {% endif %}
+
         </div>
 
         <div class="form-group">
             <label>Sexo</label>
             {{ form.sexo(class="form-control") }}
+
+             {% if form.errors.sexo %}
+            <div class="alert alert-danger">
+                {{ form.errors.sexo }}
+            </div>
+            {% endif %}
+
         </div>
 
         <button class="btn btn-primary" type="submit">Enviar</button>
