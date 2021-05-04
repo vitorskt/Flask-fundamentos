@@ -46,4 +46,4 @@ def listar_clientes():
 def listar_cliente(id):
     cliente = cliente_model.Cliente.query.filter_by(id=id).first()
 
-    return cliente.nome
+    return render_template("clientes/lista_cliente.html", cliente=cliente)
