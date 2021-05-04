@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Listagem de clientes</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-</head>
-<body>
+{% extends "clientes/base.html" %}
+
+  {% block title %}
+    Listagem de clientes
+  {% endblock title %}
+
+{% block conteudo %}
 
 <table class="table">
   <thead>
@@ -31,5 +30,4 @@
   </tbody>
 </table>
 
-</body>
-</html>
+{% endblock conteudo %}

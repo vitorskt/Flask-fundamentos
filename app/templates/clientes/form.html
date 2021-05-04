@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastrar Clientes</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-</head>
-<body>
+{% extends "clientes/base.html" %}
 
-    <form method="post">
+    {% block title %}
+        Cadastro de Clientes
+    {% endblock title %}
+
+{% block conteudo %}
+
+ <form method="post">
         {{ form.csrf_token }}
         <div class="form-group">
             <label>Nome</label>
@@ -66,12 +65,9 @@
                 {{ form.errors.sexo }}
             </div>
             {% endif %}
-
         </div>
+     <button class="btn btn-primary" type="submit">Enviar</button>
 
-        <button class="btn btn-primary" type="submit">Enviar</button>
+ </form>
 
-    </form>
-
-</body>
-</html>
+{% endblock conteudo %}
