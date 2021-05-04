@@ -35,8 +35,15 @@ def cadastrar_cliente():
     return render_template("clientes/form.html", form=form)
 
 
-@app.route("/lista_clientes", methods=['GET'])
+@app.route("/listar_clientes", methods=['GET'])
 def listar_clientes():
 
     clientes = cliente_model.Cliente.query.all()
     return render_template("clientes/lista_clientes.html", clientes=clientes)
+
+
+@app.route("/listar_cliente/<int:id>")
+def listar_cliente(id):
+    cliente = cliente_model.Cliente.query.filter_by(id=id).first()
+
+    return cliente.nome
