@@ -12,7 +12,7 @@ Remover Cliente
     <div class="card-body">
         <h4 class="card-title">Nome: {{ cliente.nome }}</h4>
         <h5>Sexo: {{ cliente.sexo }}</h5>
-        <h5>Data de Nascimento: {{ cliente.data_nascimento }}</h5>
+        <h5>Data de Nascimento: {{ cliente.data_nascimento.strftime("%d/%m/%Y") }}</h5>
         <h5>Email: {{ cliente.email }}</h5>
         <h5>Profissão: {{ cliente.profissao }}</h5>
 
