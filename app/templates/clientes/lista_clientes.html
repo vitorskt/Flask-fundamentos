@@ -23,11 +23,12 @@
       <td>{{ i.profissao }}</td>
       <td>
           <a href="{{ url_for('editar_cliente', id=i.id) }}">Editar</a>
-          <a href="#">Remover</a>
+          <a href="{{ url_for('remover_cliente', id=i.id) }}">Remover</a>
       </td>
     </tr>
   {% endfor %}
   </tbody>
 </table>
+<a href="{{ url_for('cadastrar_cliente') }}"><button class="btn btn-primary">Cadastrar</button></a>
 
 {% endblock conteudo %}

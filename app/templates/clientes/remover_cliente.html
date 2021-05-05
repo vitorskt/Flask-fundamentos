@@ -1,0 +1,25 @@
+{% extends "clientes/base.html" %}
+
+{% block title %}
+Remover Cliente
+{% endblock title %}
+
+{% block conteudo %}
+<div class="card">
+    <div class="card-header">
+        Você tem certeza que deseja remover o cliente abaixo?
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Nome: {{ cliente.nome }}</h4>
+        <h5>Sexo: {{ cliente.sexo }}</h5>
+        <h5>Data de Nascimento: {{ cliente.data_nascimento }}</h5>
+        <h5>Email: {{ cliente.email }}</h5>
+        <h5>Profissão: {{ cliente.profissao }}</h5>
+
+        <form method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="btn btn-danger">Remover</button>
+        </form>
+    </div>
+</div>
+{% endblock conteudo %}
