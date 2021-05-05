@@ -43,7 +43,7 @@ def listar_clientes():
 
 @app.route("/listar_cliente/<int:id>")
 def listar_cliente(id):
-    cliente = cliente_service.listar_cliente()
+    cliente = cliente_service.listar_cliente(id)
 
     return render_template("clientes/lista_cliente.html", cliente=cliente)
 
@@ -73,7 +73,7 @@ def editar_cliente(id):
 
 @app.route("/remover_cliente/<int:id>", methods=['GET', 'POST'])
 def remover_cliente(id):
-    cliente = cliente_service.listar_cliente()
+    cliente = cliente_service.listar_cliente(id)
     if request.method == 'POST':
         try:
             cliente_service.remover_cliente(cliente)
